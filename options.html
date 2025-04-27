@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AI Web Translator Options</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+		/>
+		<style>
+			body {
+				width: 500px;
+				min-height: 300px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			.option-container {
+				max-width: 500px;
+				margin: 0 auto;
+			}
+
+			.form-group {
+				margin-bottom: 24px;
+			}
+
+			h1 {
+				margin-bottom: 24px;
+				text-align: center;
+			}
+
+			.api-link {
+				font-size: 12px;
+				margin-top: 8px;
+				display: block;
+			}
+
+			.save-btn {
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="option-container">
+			<h1>AI Web Translator Options</h1>
+
+			<div class="form-group">
+				<label for="api-key">Google Gemini API Key:</label>
+				<input
+					type="password"
+					id="api-key"
+					class="select-styled"
+					placeholder="Enter your Gemini API key"
+				/>
+				<a
+					href="https://ai.google.dev/tutorials/setup"
+					target="_blank"
+					class="api-link"
+				>
+					Don't have a key? Get one from Google AI Studio
+				</a>
+			</div>
+
+			<button id="save-btn" class="primary-btn save-btn">
+				Save Settings
+			</button>
+			<div id="status" class="status"></div>
+		</div>
+
+		<script src="options.js"></script>
+	</body>
+</html>

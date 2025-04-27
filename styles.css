@@ -1,0 +1,241 @@
+/* Modern and beautiful styles for AI Web Translator */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+:root {
+	--primary-color: #6200ee;
+	--primary-variant: #3700b3;
+	--secondary-color: #03dac6;
+	--background: #ffffff;
+	--surface: #ffffff;
+	--error: #b00020;
+	--text-primary: rgba(0, 0, 0, 0.87);
+	--text-secondary: rgba(0, 0, 0, 0.6);
+	--border-color: rgba(0, 0, 0, 0.12);
+	--shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+	width: 350px;
+	min-height: 400px;
+	background-color: var(--background);
+	color: var(--text-primary);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 16px;
+}
+
+header {
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 12px;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 4px;
+	color: var(--primary-color);
+}
+
+.powered-by {
+	font-size: 12px;
+	color: var(--text-secondary);
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.form-group {
+	margin-bottom: 16px;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-secondary);
+}
+
+.select-styled {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	background-color: var(--surface);
+	font-size: 14px;
+	color: var(--text-primary);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	cursor: pointer;
+	transition: border-color 0.2s ease;
+}
+
+.select-styled:focus {
+	outline: none;
+	border-color: var(--primary-color);
+}
+
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	font-size: 14px;
+	resize: vertical;
+	color: var(--text-primary);
+	transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+	outline: none;
+	border-color: var(--primary-color);
+}
+
+.display-options {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.option {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.option input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.option label {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	cursor: pointer;
+	width: 100%;
+	font-weight: 400;
+}
+
+.radio-custom {
+	width: 18px;
+	height: 18px;
+	border: 2px solid var(--border-color);
+	border-radius: 50%;
+	margin-right: 12px;
+	position: relative;
+	transition: all 0.2s ease;
+}
+
+.radio-custom::after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--primary-color);
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked + label .radio-custom {
+	border-color: var(--primary-color);
+}
+
+input[type="radio"]:checked + label .radio-custom::after {
+	opacity: 1;
+}
+
+footer {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
+.primary-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	padding: 12px 16px;
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.primary-btn:hover {
+	background-color: var(--primary-variant);
+}
+
+.primary-btn .material-icons {
+	font-size: 18px;
+}
+
+.primary-btn:disabled {
+	background-color: var(--border-color);
+	cursor: not-allowed;
+}
+
+.status {
+	font-size: 14px;
+	color: var(--text-secondary);
+	min-height: 20px;
+	text-align: center;
+}
+
+.status.success {
+	color: green;
+}
+
+.status.error {
+	color: var(--error);
+}
+
+.loading {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	border-top-color: var(--primary-color);
+	animation: spin 1s ease-in-out infinite;
+	margin-right: 8px;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
